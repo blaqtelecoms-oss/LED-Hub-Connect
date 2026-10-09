@@ -1,0 +1,257 @@
+{
+  "name": "Business",
+  "type": "object",
+  "properties": {
+    "owner": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "trading_name": {
+      "type": "string"
+    },
+    "registration_type": {
+      "type": "string",
+      "enum": [
+        "Informal or not registered",
+        "Sole proprietor",
+        "Private company (Pty) Ltd",
+        "Close corporation (CC)",
+        "Co-operative",
+        "NPC or NGO",
+        "Partnership"
+      ]
+    },
+    "cipc_number": {
+      "type": "string"
+    },
+    "year_started": {
+      "type": "number"
+    },
+    "sector": {
+      "type": "string",
+      "enum": [
+        "Retail",
+        "Food",
+        "Trades",
+        "Services",
+        "Agriculture",
+        "Manufacturing"
+      ]
+    },
+    "sectors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "area": {
+      "type": "string"
+    },
+    "ward": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "owner_name": {
+      "type": "string"
+    },
+    "owner_phone": {
+      "type": "string"
+    },
+    "owner_email": {
+      "type": "string"
+    },
+    "number_of_owners": {
+      "type": "number",
+      "default": 1
+    },
+    "ownership_profile": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Women-owned",
+          "Youth-owned (18 to 35)",
+          "Owned by a person with a disability",
+          "Military veteran",
+          "Prefer not to say"
+        ]
+      }
+    },
+    "premises_type": {
+      "type": "string",
+      "enum": [
+        "Home-based",
+        "Rented premises",
+        "Municipal stall or market",
+        "Mobile or street trader",
+        "Farm or rural land",
+        "Industrial site"
+      ]
+    },
+    "trading_days": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ]
+      }
+    },
+    "staff_band": {
+      "type": "string",
+      "enum": [
+        "Owner only",
+        "2 to 5",
+        "6 to 10",
+        "11 to 25",
+        "26 to 50",
+        "51 or more"
+      ]
+    },
+    "turnover_band": {
+      "type": "string",
+      "enum": [
+        "Under R50 000",
+        "R50 000 to R250 000",
+        "R250 000 to R1 million",
+        "R1 million to R5 million",
+        "Over R5 million"
+      ]
+    },
+    "has_bank_account": {
+      "type": "boolean"
+    },
+    "vat_status": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No",
+        "Not sure"
+      ]
+    },
+    "csd_status": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No",
+        "Not sure"
+      ]
+    },
+    "support_needed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Funding",
+          "Training",
+          "Mentorship",
+          "Tender opportunities",
+          "Market access",
+          "Compliance help",
+          "Equipment",
+          "Business space"
+        ]
+      }
+    },
+    "phone": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "pending",
+        "verified",
+        "rejected",
+        "declined"
+      ],
+      "default": "pending"
+    },
+    "verified_by": {
+      "type": "string"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "jobs_count": {
+      "type": "number",
+      "default": 0
+    },
+    "profile_views": {
+      "type": "number",
+      "default": 0
+    },
+    "is_demo_data": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "area"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.owner": "{{user.id}}"
+        },
+        {
+          "data.status": "verified"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "$or": [
+        {
+          "data.owner": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.owner": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}
