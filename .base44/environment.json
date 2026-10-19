@@ -1,0 +1,19 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "VITE_SUPABASE_URL",
+      "description": "Supabase project URL, e.g. https://jokehbloiyybtorjxyhw.supabase.co (from Supabase dashboard > Project Settings > API)",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    },
+    {
+      "name": "VITE_SUPABASE_PUBLISHABLE_KEY",
+      "description": "Supabase publishable (anon) key for browser use, from Supabase dashboard > Project Settings > API",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    }
+  ]
+}

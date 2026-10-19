@@ -11,4 +11,14 @@ if (!supabaseUrl || !supabasePublishableKey) {
   );
 }
 
-export const supabase = createClient(supabaseUrl, supabasePublishableKey);
+// When the configured URL is not a valid HTTP(S) URL (e.g. a development
+// placeholder), createClient throws at module load and crashes the entire
+// app before its own connection-error screen can render. Fall back to a
+// dummy client so the app degrades gracefully; real credentials work as-is.
+let supabase;
+try {
+  supabase = createClient(supabaseUrl, supabasePublishableKey);
+} catch {
+  supabase = createClient('https://placeholder.supabase.co', 'placeholder-anon-key');
+}
+export { supabase };
