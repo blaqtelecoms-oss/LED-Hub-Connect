@@ -1,0 +1,8 @@
+{
+  "name": "Newcastle LED Hub",
+  "short_name": "LED Hub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1d6b38",
+  "theme_color": "#1d6b38"
+}

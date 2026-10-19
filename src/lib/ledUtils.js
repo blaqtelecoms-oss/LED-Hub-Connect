@@ -1,12 +1,10 @@
 // Newcastle LED Hub — shared helpers and constants
 
 // Brand mark (attached Newcastle Municipality logo)
-export const LOGO_URL =
-  "https://media.backend.com/images/public/6ac748a5e17c2620a194f576/09bd5035c_Newcastle-Local-Municipality-logo1.jpg";
+export const LOGO_URL = "/logo.svg";
 
 // Generated login hero photograph
-export const HERO_URL =
-  "https://media.backend.com/images/public/6ac748a5e17c2620a194f576/3681d07b2_generated_image.png";
+export const HERO_URL = "/hero.svg";
 
 // Format an amount as rand, e.g. 45000 -> "R 45 000"
 export function formatRand(n) {

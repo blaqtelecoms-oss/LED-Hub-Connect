@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="684" viewBox="0 0 1024 684">
+  <rect width="1024" height="684" fill="#ffffff"/>
+  <g transform="translate(512 342)" text-anchor="middle">
+    <circle r="120" fill="#1d6b38"/>
+    <text y="-10" font-family="Outfit, sans-serif" font-size="48" font-weight="700" fill="#ffffff">NLM</text>
+    <text y="40" font-family="Outfit, sans-serif" font-size="20" font-weight="500" fill="#ffffff">Newcastle</text>
+    <text y="70" font-family="Outfit, sans-serif" font-size="20" font-weight="500" fill="#ffffff">Municipality</text>
+  </g>
+</svg>

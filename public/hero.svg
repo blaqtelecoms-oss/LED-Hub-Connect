@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b2229"/>
+      <stop offset="60%" stop-color="#087E83"/>
+      <stop offset="100%" stop-color="#0b2229"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1440" fill="url(#bg)"/>
+  <g fill="#ffffff" opacity="0.08">
+    <circle cx="200" cy="300" r="180"/>
+    <circle cx="880" cy="200" r="140"/>
+    <circle cx="750" cy="900" r="220"/>
+    <circle cx="150" cy="1100" r="160"/>
+  </g>
+  <g transform="translate(540 720)" text-anchor="middle" fill="#ffffff" opacity="0.25">
+    <text font-family="Outfit, sans-serif" font-size="64" font-weight="700">Newcastle LED Hub</text>
+    <text y="60" font-family="Outfit, sans-serif" font-size="28" font-weight="500">Your local economy, in one place</text>
+  </g>
+</svg>
